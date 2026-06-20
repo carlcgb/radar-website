@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { demoFormSchema } from "@/lib/form-schema";
-import { SITE } from "@/lib/content/site";
+import { EMAIL_FROM, SITE } from "@/lib/content/site";
 
 export async function POST(request: Request) {
   try {
@@ -38,7 +38,7 @@ export async function POST(request: Request) {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          from: "RadarCRM <noreply@radarcrm.ca>",
+          from: EMAIL_FROM,
           to: [recipient],
           subject: `[Demo] ${data.organization} — ${data.firstName} ${data.lastName}`,
           text: JSON.stringify(payload, null, 2),
