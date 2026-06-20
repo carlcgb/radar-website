@@ -1,36 +1,52 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# RadarCRM Marketing Website
 
-## Getting Started
+Standalone marketing site for [radarcrm.ca](https://radarcrm.ca). Built from approved strategy documents — **no code reuse** from the RadarCRM application (`REQ/`).
 
-First, run the development server:
+## Stack
+
+- Next.js 16 (App Router)
+- TypeScript
+- Tailwind CSS v4
+- shadcn/ui (Radix)
+- French (Québec) single-page site
+
+## Getting started
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev      # http://localhost:3000
+npm run build
+npm run test
+npm run lint
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Copy `.env.example` to `.env.local` and set `RESEND_API_KEY` for production demo form delivery.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+src/
+├── app/                 # Routes, layout, API
+├── components/
+│   ├── nav/             # Sticky nav + mobile drawer
+│   ├── sections/        # S1–S15 + form + footer
+│   ├── mocks/           # Prospect card, chapter UI mocks
+│   ├── ui/              # shadcn + CTA, typography
+│   └── seo/             # JSON-LD
+├── lib/content/         # Copy constants (website-copy.md)
+└── styles/tokens.css    # Design system semantic tokens
+docs/
+└── DECISIONS.md         # Implementation decisions log
+```
 
-## Learn More
+## Sections (IA)
 
-To learn more about Next.js, take a look at the following resources:
+NAV → Hero → Trust → Aha → Chapters 01–05 → Mid CTA → Before/After → Testimonials → Sectors → Integrations → Trust → FAQ → Final CTA → Demo Form → Footer
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Deployment
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Deploy to Vercel with Toronto edge region. Set environment variables from `.env.example`.
 
-## Deploy on Vercel
+## Source documents
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+All copy and design specs: `../strategy/` (PRD, architecture, copy, design-system, wireframes).

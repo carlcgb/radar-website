@@ -54,7 +54,14 @@
 - shadcn primitives styled with RadarCRM semantic tokens (not default zinc/slate).
 - Custom marketing components live outside shadcn: ProspectCard, chapter mocks, LogoMark.
 
-## Performance
+## Phase completion (June 2026)
+
+- **Phases 0–7:** Initial implementation in `website/`
+- **Build:** `npm run build` passes
+- **Tests:** 6 unit tests (form schema + content completeness)
+- **Lint:** ESLint clean
+- **Pending before production:** Logo SVG, OG image 1200×630, Resend + SPF/DKIM, real testimonials, GA4/Plausible env vars
+
 
 - No third-party scripts except deferred GA4/Plausible when env vars set.
 - `prefers-reduced-motion`: all animations disabled globally.
